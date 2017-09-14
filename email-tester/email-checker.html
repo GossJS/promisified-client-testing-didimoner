@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Страница HTML5</title><meta charset="utf-8">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script src="./jquery.query-object.js"></script>
+ </head>
+ <body>
+  	<h3 id="response"></h3>
+   	<h4 id="source"></h4>
+   	<h5 id="author">Dmitry Ibragimov</h5>
+   
+   <script>
+     {
+       const h3_response = document.querySelector('h3#response');
+       const h4_source = document.querySelector('h4#source');
+       
+       const regex = /^[a-z]{3,}@gmail\.com$/;
+       const email = $.query.get("test");
+       const isValid = regex.test(email) ? 'yes' : 'no';
+
+       h3_response.innerHTML = isValid;
+       h4_source.innerHTML = email;
+     }
+   </script>
+ </body>
+</html>
